@@ -175,41 +175,41 @@ function ElasticLog(msg)
 ### Usage
 In order to use the integration in your test follow these simple steps.
 
-1. Clone this GitHub repository
+1. Clone this GitHub repository.
 2. Place your test and `Elastic` test from the repository into the same parent folder.
-3. In your test `*.user.js` file include the integration code
+3. In your test `*.user.js` file include the integration code.
 ```javascript
 eval(File.IncludeOnce('%WORKDIR%/../Elastic/ElasticIntegration.js'));
 ```
-4. In your test main file override Log function and call status sending function at the end.
+4. In your test main file override `Log` function and call status sending function at the end.
 ```javascript
 function Test()
 {
     // Override Log function to redirect logging to Elasticsearch
-	Log = ElasticLog;
+    Log = ElasticLog;
 
-	// Your test code
+    // Your test code
     Tester.Assert("2 + 2 = 4", (2 + 2) == 4);
-	
+
     // Send test execution status to Elasticsearch
-	SendTestStatusToElastic();
+    SendTestStatusToElastic();
 }
 ```
-5. The list of libraries in your test must include `Web Service`
+5. The list of libraries in your test must include `Web Service`.
 ```javascript
 g_load_libraries=["Web Service"];
 ```
 
 ### Analysis
-After executing your tests you can analyze the results in Kibana.
+After executing tests you can analyze the results in Kibana.
 
 #### Flaky Test
-By filtering on a test name, getting results from status index and visualizing via pie chart you can get this nice looking donut:
+By filtering on a test name, getting results from status index and visualizing via pie chart you can get this nice looking donut.
 
 <img src="Media/RapiseKibanaFlaky.png" width="1105"/>
 
 #### Logs
-By filtering on a specific substring get all relevant log messages instantly:
+By filtering on a specific substring get all relevant log messages instantly.
 
 <img src="Media/RapiseKibanaLog.png" width="1027" />
 
