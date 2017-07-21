@@ -1,4 +1,4 @@
-# Integrating Rapise and Elasticsearch
+# Rapise and Elasticsearch Integration
 
 ## About Rapise
 [Rapise](http://www.inflectra.com/Rapise/) is a test automation platform for desktop, web and mobile applications. It is designed for building [automated and manual](https://www.inflectra.com/Ideas/Whitepaper/Incorporating-Automated-and-Manual-Testing-In-An-Effective-Test-Plan.aspx) end-to-end UI tests and fits any [TestOps](https://www.inflectra.com/ideas/entry/161.aspx) infrastructure.
@@ -82,7 +82,13 @@ function GetFormattedDate()
 {
 	var d = new Date();
 	d = new Date(d.getTime() + d.getTimezoneOffset() * 60000); // elastic expects UTC
-	var dateString =  d.getFullYear() + "-" +  ("0"+(d.getMonth()+1)).slice(-2) + "-" + ("0"+d.getDate()).slice(-2) + "T" + ("0" + d.getHours()).slice(-2) + ":" + ("0" + d.getMinutes()).slice(-2) + ":" + ("0" + d.getSeconds()).slice(-2) + "." + ("0" + d.getMilliseconds()).slice(-3);
+	var dateString =  d.getFullYear() 
+        + "-" +  ("0"+(d.getMonth()+1)).slice(-2) 
+        + "-" + ("0"+d.getDate()).slice(-2) 
+        + "T" + ("0" + d.getHours()).slice(-2) 
+        + ":" + ("0" + d.getMinutes()).slice(-2) 
+        + ":" + ("0" + d.getSeconds()).slice(-2) 
+        + "." + ("0" + d.getMilliseconds()).slice(-3);
 	return dateString;
 }
 
