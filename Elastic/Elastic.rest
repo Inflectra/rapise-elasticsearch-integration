@@ -1,0 +1,25 @@
+{
+  "CurrentRequestName": "LOG",
+  "CurrentPath": "C:\\Work\\Inflectra\\InflectraGitProjects\\rapise-elasticsearch-integration\\Elastic\\Elastic.rest",
+  "Name": "Elastic.rest",
+  "Requests": [
+    {
+      "Name": "SEED",
+      "Url": "http://localhost:9200/rapise/regression",
+      "Method": "POST",
+      "Body": "{\r\n  \"timestamp\": \"2017-07-03T18:56:00\",\r\n  \"testname\": \"Elastic.js\",\r\n  \"status\": 1\r\n}",
+      "Credential": null,
+      "Headers": [],
+      "Parameters": []
+    },
+    {
+      "Name": "LOG",
+      "Url": "http://localhost:9200/rapiselog/regression",
+      "Method": "POST",
+      "Body": "{\r\n  \"timestamp\": \"2017-07-03T18:56:00\",\r\n  \"testname\": \"Elastic.js\",\r\n  \"message\": \"test message\"\r\n}",
+      "Credential": null,
+      "Headers": [],
+      "Parameters": []
+    }
+  ]
+}
